@@ -1,20 +1,17 @@
 import { motion } from "framer-motion";
 
-const Skills = () => {
+const Contact = () => {
   return (
     <motion.section
       style={styles.section}
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
     >
-      <h2 style={styles.heading}>Skills</h2>
-
-      <p><b>Languages:</b> Java, Python, C, C++, JavaScript, SQL</p>
-      <p><b>Web & Mobile:</b> HTML, CSS, React, Node.js, Express, XML, Flutter</p>
-      <p><b>Core CS:</b> DSA, OOP, ML Basics</p>
-      <p><b>Tools:</b> Git, GitHub, Android Studio, VS Code</p>
+      <h2 style={styles.heading}>Contact</h2>
+      <p>Email: akshaykrsingh.jsr@gmail.com</p>
+      <p>GitHub: github.com/aKshaykumarsingh1501</p>
+      <p>LinkedIn: linkedin.com/in/akshay-kumar-singh-936274361</p>
     </motion.section>
   );
 };
@@ -32,4 +29,4 @@ const styles = {
   },
 };
 
-export default Skills;
+export default Contact;

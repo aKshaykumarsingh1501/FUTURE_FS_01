@@ -2,10 +2,18 @@ const About = () => {
   return (
     <section style={styles.section}>
       <h2 style={styles.heading}>About Me</h2>
+
       <p style={styles.text}>
-        I am a passionate Full Stack Web Developer with hands-on experience in
-        building responsive and scalable web applications. I enjoy solving
-        real-world problems and continuously learning modern technologies.
+        I am an aspiring Software Engineer currently pursuing a Bachelor of
+        Engineering in Artificial Intelligence and Machine Learning. I have a
+        strong foundation in data structures, algorithms, and object-oriented
+        programming.
+      </p>
+
+      <p style={styles.text}>
+        I enjoy building full-stack web applications, Android apps, and AI-driven
+        solutions. I actively participate in hackathons and contribute to tech
+        communities like Google Developer Groups.
       </p>
     </section>
   );
@@ -15,6 +23,7 @@ const styles = {
   section: {
     padding: "80px 10%",
     backgroundColor: "#020617",
+    color: "#e5e7eb",
   },
   heading: {
     color: "#38bdf8",
@@ -22,9 +31,9 @@ const styles = {
     marginBottom: "20px",
   },
   text: {
-    maxWidth: "800px",
+    maxWidth: "900px",
     lineHeight: "1.8",
-    color: "#e5e7eb",
+    marginBottom: "15px",
   },
 };
 

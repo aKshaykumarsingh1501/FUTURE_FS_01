@@ -1,16 +1,28 @@
+import { motion } from "framer-motion";
+
 const Projects = () => {
   const projects = [
     {
-      title: "Personal Portfolio Website",
-      description:
-        "A professional portfolio website to showcase skills, projects, and achievements.",
-      tech: "React, CSS, GitHub, Vite",
+      title: "Swati Arts – Full Stack Artwork Ordering Website",
+      desc: "Client-based full stack artwork ordering platform with secure backend APIs, SEO optimization, and cloud-based image delivery.",
+      tech: "HTML, CSS, JavaScript, Node.js, Express.js, Cloudinary",
+      link: "https://swatiarts.onrender.com",
     },
     {
-      title: "Mini E-Commerce Store",
-      description:
-        "A simple e-commerce platform with product listing and cart functionality.",
-      tech: "React, Context API, CSS",
+      title: "EmotionVerse – AI Story Generator",
+      desc: "AI-powered web application that detects facial emotions using a CNN model and generates emotion-based stories in multiple languages.",
+      tech: "Python, TensorFlow, Streamlit, OpenCV",
+    },
+    {
+      title: "ManoSaathi – Mental Well-Being Companion",
+      desc: "Interactive mental health support platform with mood tracking, journaling features, and an AI-powered chatbot for personalized guidance.",
+      tech: "HTML, CSS, JavaScript, Node.js, Express.js",
+      link: "https://mano-saathi.vercel.app",
+    },
+    {
+      title: "Melody App – Android Music Player",
+      desc: "Android music player app that scans local storage to fetch MP3 files and provides full playback controls with notifications and playlist looping.",
+      tech: "Java, XML, Android Studio",
     },
   ];
 
@@ -18,15 +30,31 @@ const Projects = () => {
     <section style={styles.section}>
       <h2 style={styles.heading}>Projects</h2>
 
-      <div style={styles.container}>
-        {projects.map((project, index) => (
-          <div key={index} style={styles.card}>
-            <h3 style={styles.title}>{project.title}</h3>
-            <p style={styles.desc}>{project.description}</p>
+      <div style={styles.grid}>
+        {projects.map((p, i) => (
+          <motion.div
+            key={i}
+            style={styles.card}
+            whileHover={{ y: -10, scale: 1.03 }}
+            transition={{ type: "spring", stiffness: 300 }}
+          >
+            <h3 style={styles.title}>{p.title}</h3>
+            <p style={styles.desc}>{p.desc}</p>
             <p style={styles.tech}>
-              <strong>Tech:</strong> {project.tech}
+              <strong>Tech:</strong> {p.tech}
             </p>
-          </div>
+
+            {p.link && (
+              <a
+                href={p.link}
+                target="_blank"
+                rel="noreferrer"
+                style={styles.link}
+              >
+                Live Demo →
+              </a>
+            )}
+          </motion.div>
         ))}
       </div>
     </section>
@@ -36,24 +64,24 @@ const Projects = () => {
 const styles = {
   section: {
     padding: "80px 10%",
-    backgroundColor: "#0f172a",
+    backgroundColor: "#020617",
+    color: "#e5e7eb",
   },
   heading: {
     color: "#38bdf8",
     fontSize: "2rem",
     marginBottom: "30px",
   },
-  container: {
+  grid: {
     display: "grid",
-    gap: "20px",
     gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+    gap: "20px",
   },
   card: {
-    backgroundColor: "#020617",
+    border: "1px solid #38bdf8",
     padding: "20px",
     borderRadius: "10px",
-    color: "#e5e7eb",
-    border: "1px solid #38bdf8",
+    backgroundColor: "#020617",
   },
   title: {
     color: "#38bdf8",
@@ -65,6 +93,12 @@ const styles = {
   },
   tech: {
     fontSize: "0.9rem",
+  },
+  link: {
+    display: "inline-block",
+    marginTop: "10px",
+    color: "#38bdf8",
+    fontWeight: "500",
   },
 };
 
