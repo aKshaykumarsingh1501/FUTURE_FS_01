@@ -5,9 +5,9 @@ const Hero = () => {
     <section style={styles.hero}>
       <motion.div
         style={styles.content}
-        initial={{ opacity: 0, y: 50 }}
+        initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
       >
         <motion.h1
           style={styles.name}
@@ -22,7 +22,7 @@ const Hero = () => {
           style={styles.role}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.4 }}
+          transition={{ delay: 0.35 }}
         >
           Full Stack Web Developer
         </motion.h2>
@@ -31,7 +31,7 @@ const Hero = () => {
           style={styles.text}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.6 }}
+          transition={{ delay: 0.5 }}
         >
           I design and build scalable, modern web applications with a strong
           focus on performance, clean architecture, and user experience.
@@ -41,23 +41,29 @@ const Hero = () => {
           style={styles.buttons}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.8 }}
+          transition={{ delay: 0.65 }}
         >
-          <motion.button
-            style={styles.primary}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Download Resume
-          </motion.button>
+          {/* Download Resume */}
+          <a href="/RESUME_AKSHAY.pdf" download>
+            <motion.button
+              style={styles.primary}
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+            >
+              Download Resume
+            </motion.button>
+          </a>
 
-          <motion.button
-            style={styles.secondary}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Contact Me
-          </motion.button>
+          {/* Contact */}
+          <motion.a href="#contact">
+            <motion.button
+              style={styles.secondary}
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+            >
+              Contact Me
+            </motion.button>
+          </motion.a>
         </motion.div>
       </motion.div>
     </section>
@@ -94,6 +100,7 @@ const styles = {
     marginTop: "35px",
     display: "flex",
     gap: "16px",
+    flexWrap: "wrap",
   },
   primary: {
     padding: "12px 28px",

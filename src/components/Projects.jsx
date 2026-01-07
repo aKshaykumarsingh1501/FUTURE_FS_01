@@ -27,37 +27,45 @@ const Projects = () => {
   ];
 
   return (
-    <section style={styles.section}>
-      <h2 style={styles.heading}>Projects</h2>
+    <motion.section
+      style={styles.section}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+    >
+      <div style={styles.content}>
+        <h2 style={styles.heading}>Projects</h2>
 
-      <div style={styles.grid}>
-        {projects.map((p, i) => (
-          <motion.div
-            key={i}
-            style={styles.card}
-            whileHover={{ y: -10, scale: 1.03 }}
-            transition={{ type: "spring", stiffness: 300 }}
-          >
-            <h3 style={styles.title}>{p.title}</h3>
-            <p style={styles.desc}>{p.desc}</p>
-            <p style={styles.tech}>
-              <strong>Tech:</strong> {p.tech}
-            </p>
+        <div style={styles.grid}>
+          {projects.map((p, i) => (
+            <motion.div
+              key={i}
+              style={styles.card}
+              whileHover={{ y: -6 }}
+              transition={{ duration: 0.25 }}
+            >
+              <h3 style={styles.title}>{p.title}</h3>
+              <p style={styles.desc}>{p.desc}</p>
+              <p style={styles.tech}>
+                <strong>Tech:</strong> {p.tech}
+              </p>
 
-            {p.link && (
-              <a
-                href={p.link}
-                target="_blank"
-                rel="noreferrer"
-                style={styles.link}
-              >
-                Live Demo →
-              </a>
-            )}
-          </motion.div>
-        ))}
+              {p.link && (
+                <a
+                  href={p.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  style={styles.link}
+                >
+                  Live Demo →
+                </a>
+              )}
+            </motion.div>
+          ))}
+        </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
@@ -66,6 +74,10 @@ const styles = {
     padding: "80px 10%",
     backgroundColor: "#020617",
     color: "#e5e7eb",
+  },
+  content: {
+    maxWidth: "1100px",
+    margin: "0 auto",
   },
   heading: {
     color: "#38bdf8",
@@ -78,10 +90,11 @@ const styles = {
     gap: "20px",
   },
   card: {
-    border: "1px solid #38bdf8",
+    border: "1px solid rgba(56,189,248,0.4)",
     padding: "20px",
     borderRadius: "10px",
     backgroundColor: "#020617",
+    boxShadow: "0 10px 30px rgba(0,0,0,0.25)",
   },
   title: {
     color: "#38bdf8",

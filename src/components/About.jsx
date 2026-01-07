@@ -1,6 +1,14 @@
+import { motion } from "framer-motion";
+
 const About = () => {
   return (
-    <section style={styles.section}>
+    <motion.section
+      style={styles.section}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+    >
       <h2 style={styles.heading}>About Me</h2>
 
       <p style={styles.text}>
@@ -15,7 +23,7 @@ const About = () => {
         solutions. I actively participate in hackathons and contribute to tech
         communities like Google Developer Groups.
       </p>
-    </section>
+    </motion.section>
   );
 };
 
