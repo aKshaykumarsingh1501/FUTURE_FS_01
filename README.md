@@ -86,3 +86,28 @@ The resume is available for download directly from the website:
 
 Accessible at:
 https://future-fs-01-blond-three.vercel.app/RESUME_AKSHAY.pdf
+
+# Task Objective
+
+The objective of this task was to:
+
+-Build a professional personal portfolio website
+
+-Showcase skills, projects, and achievements
+
+-Practice modern frontend development
+
+-Use GitHub for version control
+
+-Deploy the project online
+
+All objectives have been successfully completed.
+
+# Author
+
+Akshay Kumar Singh
+Full Stack Web Developer
+
+GitHub: https://github.com/aKshaykumarsingh1501
+
+LinkedIn: https://linkedin.com/in/akshay-kumar-singh-936274361
